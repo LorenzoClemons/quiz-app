@@ -39,7 +39,7 @@ h4{
   font-size: 48px;
   
 }
-p {
+p, #correctStatement, #incorrectStatement {
   font-family: harryP, magicSchool ;
   font-size: 36px;
   border: solid;

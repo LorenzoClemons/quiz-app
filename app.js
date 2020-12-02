@@ -53,7 +53,9 @@ const store = {
   ],
   quizStarted: false,
   questionNumber: 0,
-  score: 0
+  score: 0,
+  correctStatement: "Awesome! You got that one right",
+  incorrectStatement: "Uh Oh! Looks like you didn't get that one right. The correct answer is: "
 };
 
 function generateStartPage() {
@@ -101,14 +103,14 @@ function handleAnswerSubmit(){
     //compare value to correct answer in store for that question
     console.log(store.score)
     let correctStatement = `<p>Awesome! You got that one right</p>`
-    let incorrectStatement = `<p>Uh Oh! Looks like you didn't get that one right. The correct answer is: ${pageAnswer}</p>` 
+    let incorrectStatement = `<p>Uh Oh! Looks like you didn't get that one right. The correct answer is: </p>` 
     if(submittedAnswer === pageAnswer){
       store.score+=1;
-      $(".answerArea").html(`${correctStatement}`)
+      $("#correctStatement").show()
       $("#submitAnswer").prop("disabled", true)
     }
     else{
-      $(".answerArea").html(`${incorrectStatement}`)
+      $("#incorrectStatement").show()
       $("#submitAnswer").prop("disabled", true)
     }  
     //submittedAnswer === question.correctAnswer ? console.log("that was right") : console.log("that was wrong")
@@ -153,7 +155,10 @@ function generateQuestionPage() {
     <input type="submit" id="submitAnswer" name="submitAnswer" value="Submit Answer"></button>
     <input type="submit" id="nextQuestion" value="Next question" disabled></button>
     </form>
-    <div class="answerArea"></div>
+    <div class="answerArea">
+    <div id="correctStatement">${store.correctStatement}</div>
+    <div id="incorrectStatement">${store.incorrectStatement}${question.correctAnswer}</div>
+    </div>
   </div>`
 }
 
@@ -175,11 +180,14 @@ function render() {
       page = generateFinalPage(store)
     } else {
       page = generateQuestionPage(store)
+     
     }
   } else {
     page = generateStartPage(store)
   }
   $(`main`).html(page)
+  $("#correctStatement").hide()
+  $("#incorrectStatement").hide()
 }
 
 
