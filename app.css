@@ -6,3 +6,86 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+@font-face {
+  font-family: magicSchool;
+  src: url(fonts/magicSchool.ttf)
+}
+
+@font-face {
+  font-family: parryHotter;
+  src: url(fonts/parryHotter.ttf)
+}
+@font-face {
+  font-family: harryP;
+  src: url(fonts/harryP.ttf)
+}
+@font-face {
+  font-family: lumos;
+  src: url(fonts/lumos.ttf)
+}
+
+h1 {
+  font-family:magicSchool ;
+  font-size: 52px;
+  text-align: center;
+}
+h2{
+  font-family: harryP;
+  font-size: 48px;
+  
+}
+h4{
+  font-family: magicSchool;
+  font-size: 48px;
+  
+}
+p {
+  font-family: harryP ;
+  font-size: 36px;
+  border: solid;
+  background-color: white;
+  padding: 5px;
+}
+
+.startPage {
+  text-align: center;
+}
+.mainPage{
+  font-family: magicSchool;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.label{
+  font-size: 50px;
+}
+.answerArea {
+  text-align: center;
+  margin:120px 120px 0px 0px;
+  font-size: 50px;
+}
+form {
+ margin: 0px 80px 0px 30px;
+}
+.HUD{
+  font-family: magicSchool;
+  font-size: 36px;
+}
+
+
+body {
+  width: auto;
+  background-image: url(images/cartoonHogwarts.png);
+  background-color: #f1faee ;
+  background-size: cover;
+  background-repeat:no-repeat ;
+  max-height: fit-content;
+  
+}
+
+@media all and (min-width: 800px){
+  .mainPage{
+    flex-direction: row;
+  }
+}
