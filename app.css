@@ -75,13 +75,18 @@ form {
 
 
 body {
-  width: auto;
+  /* width: auto;
   background-image: url(images/cartoonHogwarts.png);
   background-color: #f1faee ;
   background-size: cover;
   background-repeat:no-repeat ;
   max-height: fit-content;
-  
+   */
+   background: url(images/cartoonHogwarts.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 @media all and (min-width: 800px){
